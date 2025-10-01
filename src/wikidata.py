@@ -43,5 +43,5 @@ def getGameWDEntry(df: pd.DataFrame) -> pd.DataFrame:
             print(f"Error fetching Wikidata ID for developer {dev_name}: {e}")
             return None
 
-    df['wikidata_id'] = df['appid'].apply(fetch_wikidata_id)
+    df['wd_game_id'] = df['appid'].apply(fetch_wikidata_id)
     return df

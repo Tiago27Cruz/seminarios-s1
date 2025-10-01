@@ -17,6 +17,7 @@ def removeGames(df: pd.DataFrame):
         else:
             raise ValueError("Invalid owners range")
 
+    df = df.drop(columns=['english'])
     df = df[df.apply(filter_by_owners, axis=1)]
     return df
 
