@@ -2,3 +2,4 @@ steam.csv
 apicache/
 throttle.ctrl
 __pycache__/
+steam_wikidata.csv

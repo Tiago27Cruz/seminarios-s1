@@ -8,7 +8,7 @@ def readCsvData(filePath: str) -> pd.DataFrame:
     df = pd.read_csv(filePath)
     return df
 
-def removeGames(df: pd.DataFrame):
+def removeGames(df: pd.DataFrame) -> pd.DataFrame:
     def filter_by_owners(row):
         owners_range = row['owners'].split('-')
         if len(owners_range) > 0:
@@ -21,7 +21,7 @@ def removeGames(df: pd.DataFrame):
     df = df[df.apply(filter_by_owners, axis=1)]
     return df
 
-def saveCsvData(df: pd.DataFrame, filePath: str):
+def saveCsvData(df: pd.DataFrame, filePath: str) -> None:
     df.to_csv(filePath, index=False)
     print(f"Data saved to {filePath}")
 
