@@ -33,6 +33,7 @@ def main():
         print("Creating new CSV with linked data @ " + args.output)
         df = readCsvData(args.input)
         df = hm.removeGames(df)
+        df = hm.aggregateRatings(df)
         df = wd.getGameWDEntry(df)
         saveCsvData(df, args.output)
     else:
@@ -40,6 +41,7 @@ def main():
             args.input = STEAMLINKED
         print("Reading existing CSV with linked data @ " + args.input)
         df = readCsvData(args.input)
+        saveCsvData(df, args.output)
 
     print(df.head())
     
