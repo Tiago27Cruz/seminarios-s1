@@ -2,9 +2,10 @@
 
 Dataset from https://www.kaggle.com/datasets/nikdavis/steam-store-games
 
-## How to Run
+## 0. How to Run
 
-1. Download dataset from https://www.kaggle.com/datasets/nikdavis/steam-store-games -- You can choose any name to set it as, but we recommend to leave it as steam.csv under root/resources/
+1. Download dataset from https://www.kaggle.com/datasets/nikdavis/steam-store-games 
+    - You can choose any name to set it as, but we recommend to leave it as steam.csv under root/resources/
 2. Create the new linked data dataset: 
     - from root/src/ 
     
