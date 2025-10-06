@@ -35,6 +35,8 @@ def main():
         df = hm.removeGames(df)
         df = hm.aggregateRatings(df)
         df = wd.getGameWDEntry(df)
+        df = hm.dropWithoutWikidata(df)
+        df = hm.joinWikidataColumns(df)
         saveCsvData(df, args.output)
     else:
         if not args.input or args.input == STEAMDB:

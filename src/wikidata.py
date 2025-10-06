@@ -28,30 +28,30 @@ def getGameWDEntry(df: pd.DataFrame) -> pd.DataFrame:
                 if 'P31' in item_dict['claims']:
                     for claim in item_dict['claims']['P31']:
                         if claim.getTarget().getID() == 'Q7889':  # Q7889: video game
-                            result_data['wd_game_id'] = item.title()
+                            result_data['wd_game_id'] = "https://www.wikidata.org/wiki/" + item.title()
 
                 # Check for "developer" property (P178)
                 if 'P178' in item_dict['claims']:
                     result_data['wd_developers'] = [
-                        claim.getTarget().getID() for claim in item_dict['claims']['P178']
+                        "https://www.wikidata.org/wiki/" + claim.getTarget().getID() for claim in item_dict['claims']['P178']
                     ]
                 
                 # Check for "publisher" property (P123)
                 if 'P123' in item_dict['claims']:
                     result_data['wd_publishers'] = [
-                        claim.getTarget().getID() for claim in item_dict['claims']['P123']
+                        "https://www.wikidata.org/wiki/" + claim.getTarget().getID() for claim in item_dict['claims']['P123']
                     ]
 
                 # Check for "platform" property (P400)
                 if 'P400' in item_dict['claims']:
                     result_data['wd_platforms'] = [
-                        claim.getTarget().getID() for claim in item_dict['claims']['P400']
+                        "https://www.wikidata.org/wiki/" + claim.getTarget().getID() for claim in item_dict['claims']['P400']
                     ]
 
                 # Check for "genre" property (P136)
                 if 'P136' in item_dict['claims']:
                     result_data['wd_genres'] = [
-                        claim.getTarget().getID() for claim in item_dict['claims']['P136']
+                        "https://www.wikidata.org/wiki/" + claim.getTarget().getID() for claim in item_dict['claims']['P136']
                     ]
 
             return result_data
