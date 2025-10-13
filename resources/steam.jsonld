@@ -35,7 +35,8 @@
         },
         "categories":
         {
-            // TODO
+            "@id": "https://purl.org/smvg/categories",
+            "@type": "xsd:string"
         },
         "genres":
         {
