@@ -2,10 +2,7 @@
     "@context":
     {
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "identifier": {
-            "@id": "http://purl.org/dc/terms/identifier",
-            "@type": "@id"
-        },
+        "wd": "http://www.wikidata.org/entity/",
         "name":
         {
             "@id": "http://purl.org/dc/terms/title",
@@ -75,7 +72,7 @@
         "owners":
         {
             "@id": "https://purl.org/smvg/owners",
-            "@type": "xsd:integer"
+            "@type": "xsd:string"
         },
         "price":
         {

@@ -1,0 +1,41 @@
+{
+    "@context": "https://purl.org/smvg/context",
+    "@graph":[
+        {
+            "@id": "wd:Q163628",
+            "name": "Counter-Strike",
+            "release_date": "2000-11-01",
+            "developers": "wd:Q169461",
+            "platforms": [
+                "wd:Q7889",
+                "wd:Q1073"
+            ],
+            "required_age": 18,
+            "categories": [
+                "Multi-player",
+                "Co-operative",
+                "Single-player"
+            ],
+            "genres": "wd:Q744038",
+            "steamspy_tags": [
+                "Action",
+                "FPS",
+                "Shooter",
+                "Multiplayer",
+                "Team-Based",
+                "Competitive",
+                "First-Person",
+                "Classic",
+                "eSports",
+                "Tactical"
+            ],
+            "achievements": 167,
+            "rating_value": 81.5,
+            "rating_count": 35000,
+            "average_playtime": 120.5,
+            "median_playtime": 45.0,
+            "owners": "20000000-50000000",
+            "price": 9.99
+        }
+    ]
+}

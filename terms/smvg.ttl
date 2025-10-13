@@ -29,6 +29,6 @@ smvg:median_playtime
 smvg:owners
     a rdf:Property ;
         rdfs:label "owners"@en ;
-        rdfs:comment "Number of owners of the game."@en ;
-        rdfs:range xsd:integer ;
+        rdfs:comment "Range of number of owners of the game."@en ;
+        rdfs:range xsd:string ;
 
