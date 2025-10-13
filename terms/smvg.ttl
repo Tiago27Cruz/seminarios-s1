@@ -2,6 +2,12 @@
 @prefix rdfs: <https://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+smvg:categories
+    a rdf:Property ;
+        rdfs:label "categories"@en ;
+        rdfs:comment "List of categories that the game belongs to."@en ;
+        rdfs:range xsd:string ;
+
 smvg:achievements
     a rdf:Property ;
         rdfs:label "achievements"@en ;

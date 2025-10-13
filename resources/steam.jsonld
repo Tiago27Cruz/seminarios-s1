@@ -1,0 +1,82 @@
+{
+    "@context":
+    {
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "identifier": "http://purl.org/dc/terms/identifier",
+        "name":
+        {
+            "@id": "http://purl.org/dc/terms/title",
+            "@type": "@id"
+        },
+        "release_date":
+        {
+            "@id": "https://schema.org/datePublished",
+            "@type": "xsd:date"
+        },
+        "developers":
+        {
+            "@id": "https://schema.org/creator",
+            "@type": "@id"
+        },
+        "publishers":
+        {
+            "@id": "https://schema.org/publisher",
+            "@type": "@id"
+        },
+        "platforms":
+        {
+            "@id": "https://schema.org/operatingSystem",
+            "@type": "@id"
+        },
+        "required_age": 
+        {
+            "@id": "https://schema.org/requiredMinAge",
+            "@type": "xsd:integer"
+        },
+        "categories":
+        {
+            // TODO
+        },
+        "genres":
+        {
+            "@id": "https://schema.org/genre",
+            "@type": "@id"
+        },
+        "steamspy_tags": "https://schema.org/keywords",
+        "achievements":
+        {
+            "@id": "https://purl.org/smvg/achievements",
+            "@type": "xsd:integer"
+        },
+        "rating_value":
+        {
+            "@id": "https://schema.org/ratingValue",
+            "@type": "xsd:float"
+        },
+        "rating_count":
+        {
+            "@id": "https://schema.org/ratingCount",
+            "@type": "xsd:integer"
+        },
+        "average_playtime":
+        {
+            "@id": "https://purl.org/smvg/avg_playtime",
+            "@type": "xsd:float"
+        },
+        "median_playtime":
+        {
+            "@id": "https://purl.org/smvg/median_playtime",
+            "@type": "xsd:float"
+        },
+        "owners":
+        {
+            "@id": "https://purl.org/smvg/owners",
+            "@type": "xsd:integer"
+        },
+        "price":
+        {
+            "@id": "https://schema.org/price",
+            "@type": "xsd:float"
+        }
+    }
+}
