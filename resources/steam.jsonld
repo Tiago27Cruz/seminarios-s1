@@ -2,11 +2,14 @@
     "@context":
     {
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "identifier": "http://purl.org/dc/terms/identifier",
+        "identifier": {
+            "@id": "http://purl.org/dc/terms/identifier",
+            "@type": "@id"
+        },
         "name":
         {
             "@id": "http://purl.org/dc/terms/title",
-            "@type": "@id"
+            "@type": "xsd:string"
         },
         "release_date":
         {

@@ -45,9 +45,9 @@ def addWikidataPrefix(row: pd.Series) -> pd.Series:
 
 def joinWikidataColumns(df: pd.DataFrame) -> pd.DataFrame:
     #df = df.apply(addWikidataPrefix, axis=1)
-    df = df.drop(columns=['name', 'developer', 'publisher', 'platforms', 'genres'])
+    df = df.drop(columns=['appid', 'developer', 'publisher', 'platforms', 'genres'])
     df = df.rename(columns={
-        'wd_game_id': 'name',
+        'wd_game_id': 'id',
         'wd_developers': 'developers',
         'wd_publishers': 'publishers',
         'wd_platforms': 'platforms',
