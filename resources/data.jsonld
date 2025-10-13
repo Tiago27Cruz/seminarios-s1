@@ -2,7 +2,8 @@
     "@context": "https://purl.org/smvg/context",
     "@graph":[
         {
-            "@id": "wd:Q163628",
+            "@id": "http://www.wikidata.org/entity/Q163628",
+            "@type": "https://schema.org/VideoGame",
             "name": "Counter-Strike",
             "release_date": "2000-11-01",
             "developers": "wd:Q169461",
