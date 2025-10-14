@@ -6,29 +6,29 @@ smvg:categories
     a rdf:Property ;
         rdfs:label "categories"@en ;
         rdfs:comment "List of categories that the game belongs to."@en ;
-        rdfs:range xsd:string ;
+        rdfs:range xsd:string .
 
 smvg:achievements
     a rdf:Property ;
         rdfs:label "achievements"@en ;
         rdfs:comment "Number of achievements available to win in the game."@en ;
-        rdfs:range xsd:integer ;
+        rdfs:range xsd:integer .
 
 smvg:avg_playtime
     a rdf:Property ;
         rdfs:label "average playtime"@en ;
         rdfs:comment "Average playtime in hours."@en ;
-        rdfs:range xsd:float ;
+        rdfs:range xsd:float .
 
 smvg:median_playtime
     a rdf:Property ;
         rdfs:label "median playtime"@en ;
         rdfs:comment "Median playtime in hours."@en ;
-        rdfs:range xsd:float ;
+        rdfs:range xsd:float .
 
 smvg:owners
     a rdf:Property ;
         rdfs:label "owners"@en ;
         rdfs:comment "Range of number of owners of the game."@en ;
-        rdfs:range xsd:string ;
+        rdfs:range xsd:string .
 
