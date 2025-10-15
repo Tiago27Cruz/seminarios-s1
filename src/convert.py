@@ -65,7 +65,6 @@ def get_literal_type(property_name, context):
                 return None
     return XSD.string
 
-
 def convert_csv_to_jsonld(csv_file, context_file, output_file=None, base_uri=None):
     """Convert CSV file to JSON-LD using the provided context."""
     
@@ -101,8 +100,19 @@ def convert_csv_to_jsonld(csv_file, context_file, output_file=None, base_uri=Non
                 if value and value.strip(): 
                     prop_uri = get_property_uri(column, context, namespaces)
                     literal_type = get_literal_type(column, context)
-                    
-                    if literal_type is None:
+
+                    if(column == "categories" or column == "steamspy_tags"):
+                        value = value.replace("'", '"') 
+                        values_str = value.split(";")
+
+                        for val in values_str:
+                            val = val.strip()
+                            if val:
+                                obj = Literal(val, datatype=XSD.string)
+                                g.add((subject_uri, prop_uri, obj))
+                        continue
+
+                    elif literal_type is None:
                         value_str = value.strip()
 
                         if value_str.startswith(('http://', 'https://', 'urn:', 'wd:')): # Single URI
