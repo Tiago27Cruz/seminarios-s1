@@ -8,6 +8,9 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, XSD
 import argparse
 
+TEST = "../resources/test_games.csv"
+CONTEXT = "../resources/steam_context.jsonld"
+
 
 def load_context(context_file):
     """Load the JSON-LD context file."""
@@ -42,7 +45,10 @@ def get_property_uri(property_name, context, namespaces):
 
 
 def get_literal_type(property_name, context):
-    """Get the XSD type for a literal value based on the context."""
+    """
+        Get the XSD type for a literal value based on the context.
+        Returns None if the property is expected to be a URI.
+    """
     if property_name in context:
         prop_def = context[property_name]
         if isinstance(prop_def, dict) and '@type' in prop_def:
@@ -58,7 +64,6 @@ def get_literal_type(property_name, context):
             elif type_str == '@id':
                 return None
     return XSD.string
-
 
 def convert_csv_to_jsonld(csv_file, context_file, output_file=None, base_uri=None):
     """Convert CSV file to JSON-LD using the provided context."""
@@ -78,30 +83,63 @@ def convert_csv_to_jsonld(csv_file, context_file, output_file=None, base_uri=Non
     with open(csv_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         
-        for row_num, row in enumerate(reader, 1):
-            row_id = f"row_{row_num}"
+        for _, row in enumerate(reader, 1):
+            # Define the @id for the subject
+            row_id = row.get('id')
             if base_uri:
                 subject_uri = URIRef(f"{base_uri}{row_id}")
             else:
-                subject_uri = URIRef(f"urn:csv:{row_id}")
-            
+                subject_uri = URIRef(f"{row_id}")
+
+            # Define @type as a schema:VideoGame
             g.add((subject_uri, RDF.type, namespaces['schema']['VideoGame']))
             
             for column, value in row.items():
+                if column == 'id': continue
+
                 if value and value.strip(): 
                     prop_uri = get_property_uri(column, context, namespaces)
                     literal_type = get_literal_type(column, context)
-                    
-                    if literal_type is None: 
+
+                    if(column == "categories" or column == "steamspy_tags"):
+                        value = value.replace("'", '"') 
+                        values_str = value.split(";")
+
+                        for val in values_str:
+                            val = val.strip()
+                            if val:
+                                obj = Literal(val, datatype=XSD.string)
+                                g.add((subject_uri, prop_uri, obj))
+                        continue
+
+                    elif literal_type is None:
                         value_str = value.strip()
-                        if value_str.startswith(('http://', 'https://', 'urn:', 'wd:')):
+
+                        if value_str.startswith(('http://', 'https://', 'urn:', 'wd:')): # Single URI
                             obj = URIRef(value_str)
-                        else:
+                            g.add((subject_uri, prop_uri, obj))
+
+                        elif value_str.startswith('[') and value_str.endswith(']'): # Handle list of URIs in the format ['uri', 'uri2', 'uri3']
+
+                            uri_list = eval(value_str) # Convert the string to a Python list
+                            for uri in uri_list:
+                                uri = uri.strip()
+
+                                if(uri.startswith("https://www.wikidata.org/wiki/")):
+                                    uri = uri.replace("https://www.wikidata.org/wiki/", "wd:")
+                                    
+                                if uri.startswith(('http://', 'https://', 'urn:', 'wd:')):
+                                    obj = URIRef(uri)
+                                    g.add((subject_uri, prop_uri, obj))
+
+                        else: # Fallback to treating as a single URI
                             obj = Literal(value_str, datatype=XSD.string)
+                            g.add((subject_uri, prop_uri, obj))
                     else:
                         obj = Literal(value.strip(), datatype=literal_type)
+                        g.add((subject_uri, prop_uri, obj))
                     
-                    g.add((subject_uri, prop_uri, obj))
+                    
     
     jsonld_str = g.serialize(format='json-ld', context=context, indent=2)
 
@@ -115,8 +153,8 @@ def convert_csv_to_jsonld(csv_file, context_file, output_file=None, base_uri=Non
 
 def main():
     parser = argparse.ArgumentParser(description='Convert CSV to JSON-LD using RDFlib')
-    parser.add_argument('csv_file', help='Input CSV file')
-    parser.add_argument('-c', '--context', default='resources/steam_context.jsonld',
+    parser.add_argument('-i', '--csv_file', help='Input CSV file', default=TEST, type=str)
+    parser.add_argument('-c', '--context', default=CONTEXT,
                        help='JSON-LD context file (default: resources/steam_context.jsonld)')
     parser.add_argument('-o', '--output', help='Output JSON-LD file (default: stdout)')
     parser.add_argument('-b', '--base-uri', help='Base URI for resources')
