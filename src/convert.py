@@ -8,6 +8,9 @@ from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, XSD
 import argparse
 
+TEST = "../resources/test_games.csv"
+CONTEXT = "../resources/steam_context.jsonld"
+
 
 def load_context(context_file):
     """Load the JSON-LD context file."""
@@ -115,8 +118,8 @@ def convert_csv_to_jsonld(csv_file, context_file, output_file=None, base_uri=Non
 
 def main():
     parser = argparse.ArgumentParser(description='Convert CSV to JSON-LD using RDFlib')
-    parser.add_argument('csv_file', help='Input CSV file')
-    parser.add_argument('-c', '--context', default='resources/steam_context.jsonld',
+    parser.add_argument('-i', '--csv_file', help='Input CSV file', default=TEST, type=str)
+    parser.add_argument('-c', '--context', default=CONTEXT,
                        help='JSON-LD context file (default: resources/steam_context.jsonld)')
     parser.add_argument('-o', '--output', help='Output JSON-LD file (default: stdout)')
     parser.add_argument('-b', '--base-uri', help='Base URI for resources')
