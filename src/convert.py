@@ -45,7 +45,10 @@ def get_property_uri(property_name, context, namespaces):
 
 
 def get_literal_type(property_name, context):
-    """Get the XSD type for a literal value based on the context."""
+    """
+        Get the XSD type for a literal value based on the context.
+        Returns None if the property is expected to be a URI.
+    """
     if property_name in context:
         prop_def = context[property_name]
         if isinstance(prop_def, dict) and '@type' in prop_def:
@@ -81,25 +84,40 @@ def convert_csv_to_jsonld(csv_file, context_file, output_file=None, base_uri=Non
     with open(csv_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         
-        for row_num, row in enumerate(reader, 1):
+        for _, row in enumerate(reader, 1):
+            # Define the @id for the subject
             row_id = row.get('id')
             if base_uri:
                 subject_uri = URIRef(f"{base_uri}{row_id}")
             else:
                 subject_uri = URIRef(f"{row_id}")
-            
+
+            # Define @type as a schema:VideoGame
             g.add((subject_uri, RDF.type, namespaces['schema']['VideoGame']))
             
             for column, value in row.items():
+                if column == 'id': continue
+
                 if value and value.strip(): 
                     prop_uri = get_property_uri(column, context, namespaces)
                     literal_type = get_literal_type(column, context)
                     
-                    if literal_type is None: 
+                    if literal_type is None:
                         value_str = value.strip()
-                        if value_str.startswith(('http://', 'https://', 'urn:', 'wd:')):
+
+                        if value_str.startswith(('http://', 'https://', 'urn:', 'wd:')): # Single URI
                             obj = URIRef(value_str)
-                        else:
+
+                        elif value_str.startswith('[') and value_str.endswith(']'): # Handle list of URIs in the format ['uri', 'uri2', 'uri3']
+                            # Convert the string to a Python list
+                            uri_list = eval(value_str)
+                            print(uri_list)
+                            for uri in uri_list:
+                                uri = uri.strip()
+                                if uri.startswith(('http://', 'https://', 'urn:', 'wd:')):
+                                    obj = URIRef(uri)
+                                    
+                        else: # Fallback to treating as a single URI
                             obj = Literal(value_str, datatype=XSD.string)
                     else:
                         obj = Literal(value.strip(), datatype=literal_type)
