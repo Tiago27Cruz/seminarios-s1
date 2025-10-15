@@ -82,11 +82,11 @@ def convert_csv_to_jsonld(csv_file, context_file, output_file=None, base_uri=Non
         reader = csv.DictReader(f)
         
         for row_num, row in enumerate(reader, 1):
-            row_id = f"row_{row_num}"
+            row_id = row.get('id')
             if base_uri:
                 subject_uri = URIRef(f"{base_uri}{row_id}")
             else:
-                subject_uri = URIRef(f"urn:csv:{row_id}")
+                subject_uri = URIRef(f"{row_id}")
             
             g.add((subject_uri, RDF.type, namespaces['schema']['VideoGame']))
             
