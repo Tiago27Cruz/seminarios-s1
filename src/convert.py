@@ -107,22 +107,29 @@ def convert_csv_to_jsonld(csv_file, context_file, output_file=None, base_uri=Non
 
                         if value_str.startswith(('http://', 'https://', 'urn:', 'wd:')): # Single URI
                             obj = URIRef(value_str)
+                            g.add((subject_uri, prop_uri, obj))
 
                         elif value_str.startswith('[') and value_str.endswith(']'): # Handle list of URIs in the format ['uri', 'uri2', 'uri3']
-                            # Convert the string to a Python list
-                            uri_list = eval(value_str)
-                            print(uri_list)
+
+                            uri_list = eval(value_str) # Convert the string to a Python list
                             for uri in uri_list:
                                 uri = uri.strip()
+
+                                if(uri.startswith("https://www.wikidata.org/wiki/")):
+                                    uri = uri.replace("https://www.wikidata.org/wiki/", "wd:")
+                                    
                                 if uri.startswith(('http://', 'https://', 'urn:', 'wd:')):
                                     obj = URIRef(uri)
-                                    
+                                    g.add((subject_uri, prop_uri, obj))
+
                         else: # Fallback to treating as a single URI
                             obj = Literal(value_str, datatype=XSD.string)
+                            g.add((subject_uri, prop_uri, obj))
                     else:
                         obj = Literal(value.strip(), datatype=literal_type)
+                        g.add((subject_uri, prop_uri, obj))
                     
-                    g.add((subject_uri, prop_uri, obj))
+                    
     
     jsonld_str = g.serialize(format='json-ld', context=context, indent=2)
 

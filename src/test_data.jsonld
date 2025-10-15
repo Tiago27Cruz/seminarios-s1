@@ -71,14 +71,24 @@
       "achievements": "147",
       "average_playtime": "6842.0",
       "categories": "Multi-player;Cross-Platform Multiplayer;Steam Achievements;Steam Cloud;Valve Anti-Cheat enabled;Stats;Includes Source SDK",
-      "developers": "https://www.wikidata.org/wiki/Q1193116",
-      "genres": "https://www.wikidata.org/wiki/Q1260861",
+      "developers": [
+        "wd:Q193559",
+        "wd:Q1193116"
+      ],
+      "genres": [
+        "wd:Q185029",
+        "wd:Q1260861"
+      ],
       "median_playtime": "400.0",
       "name": "Counter-Strike: Source",
       "owners": "10000000-20000000",
-      "platforms": "https://www.wikidata.org/wiki/Q14116",
+      "platforms": [
+        "wd:Q388",
+        "wd:Q1406",
+        "wd:Q14116"
+      ],
       "price": "7.19",
-      "publishers": "https://www.wikidata.org/wiki/Q193559",
+      "publishers": "wd:Q193559",
       "rating_count": "80137",
       "rating_value": "95.63622296816702",
       "release_date": "2004-11-01",
@@ -86,79 +96,26 @@
       "steamspy_tags": "Action;FPS;Multiplayer"
     },
     {
-      "@id": "https://www.wikidata.org/wiki/Q831796",
-      "@type": "https://schema.org/VideoGame",
-      "achievements": "0",
-      "average_playtime": "361.0",
-      "categories": "Single-player",
-      "developers": "https://www.wikidata.org/wiki/Q1046593",
-      "genres": "https://www.wikidata.org/wiki/Q27670585",
-      "median_playtime": "205.0",
-      "name": "Half-Life: Blue Shift",
-      "owners": "5000000-10000000",
-      "platforms": "https://www.wikidata.org/wiki/Q1406",
-      "price": "3.99",
-      "publishers": "https://www.wikidata.org/wiki/Q494614",
-      "rating_count": "4242",
-      "rating_value": "90.0990099009901",
-      "release_date": "2001-06-01",
-      "required_age": "0",
-      "steamspy_tags": "FPS;Action;Sci-fi"
-    },
-    {
-      "@id": "https://www.wikidata.org/wiki/Q1799621",
-      "@type": "https://schema.org/VideoGame",
-      "achievements": "0",
-      "average_playtime": "277.0",
-      "categories": "Multi-player;Online Multi-Player;Local Multi-Player;Valve Anti-Cheat enabled",
-      "developers": "https://www.wikidata.org/wiki/Q193559",
-      "genres": "https://www.wikidata.org/wiki/Q185029",
-      "median_playtime": "62.0",
-      "name": "Team Fortress Classic",
-      "owners": "5000000-10000000",
-      "platforms": "https://www.wikidata.org/wiki/Q14116",
-      "price": "3.99",
-      "publishers": "https://www.wikidata.org/wiki/Q494614",
-      "rating_count": "3951",
-      "rating_value": "83.97873955960516",
-      "release_date": "1999-04-01",
-      "required_age": "0",
-      "steamspy_tags": "Action;FPS;Multiplayer"
-    },
-    {
-      "@id": "https://www.wikidata.org/wiki/Q193581",
-      "@type": "https://schema.org/VideoGame",
-      "achievements": "33",
-      "average_playtime": "691.0",
-      "categories": "Single-player;Steam Achievements;Steam Trading Cards;Captions available;Partial Controller Support;Steam Cloud;Includes Source SDK",
-      "developers": "https://www.wikidata.org/wiki/Q193559",
-      "genres": "https://www.wikidata.org/wiki/Q129722891",
-      "median_playtime": "402.0",
-      "name": "Half-Life 2",
-      "owners": "10000000-20000000",
-      "platforms": "https://www.wikidata.org/wiki/Q94",
-      "price": "7.19",
-      "publishers": "https://www.wikidata.org/wiki/Q193559",
-      "rating_count": "70321",
-      "rating_value": "96.56006029493324",
-      "release_date": "2004-11-16",
-      "required_age": "0",
-      "steamspy_tags": "FPS;Action;Sci-fi"
-    },
-    {
       "@id": "https://www.wikidata.org/wiki/Q693937",
       "@type": "https://schema.org/VideoGame",
       "achievements": "0",
       "average_playtime": "624.0",
       "categories": "Single-player;Multi-player;Valve Anti-Cheat enabled",
-      "developers": "https://www.wikidata.org/wiki/Q1046593",
-      "genres": "https://www.wikidata.org/wiki/Q27670585",
+      "developers": "wd:Q1046593",
+      "genres": [
+        "wd:Q185029",
+        "wd:Q27670585"
+      ],
       "median_playtime": "415.0",
       "name": "Half-Life: Opposing Force",
       "owners": "5000000-10000000",
-      "platforms": "https://www.wikidata.org/wiki/Q1406",
+      "platforms": [
+        "wd:Q388",
+        "wd:Q14116",
+        "wd:Q1406"
+      ],
       "price": "3.99",
-      "publishers": "https://www.wikidata.org/wiki/Q494614",
+      "publishers": "wd:Q494614",
       "rating_count": "5538",
       "rating_value": "94.79956663055255",
       "release_date": "1999-11-01",
@@ -171,14 +128,18 @@
       "achievements": "0",
       "average_playtime": "187.0",
       "categories": "Multi-player;Valve Anti-Cheat enabled",
-      "developers": "https://www.wikidata.org/wiki/Q193559",
-      "genres": "https://www.wikidata.org/wiki/Q185029",
+      "developers": "wd:Q193559",
+      "genres": "wd:Q185029",
       "median_playtime": "34.0",
       "name": "Day of Defeat",
       "owners": "5000000-10000000",
-      "platforms": "https://www.wikidata.org/wiki/Q14116",
+      "platforms": [
+        "wd:Q388",
+        "wd:Q1406",
+        "wd:Q14116"
+      ],
       "price": "3.99",
-      "publishers": "https://www.wikidata.org/wiki/Q193559",
+      "publishers": "wd:Q193559",
       "rating_count": "3814",
       "rating_value": "89.56476140534872",
       "release_date": "2003-05-01",
@@ -186,24 +147,37 @@
       "steamspy_tags": "FPS;World War II;Multiplayer"
     },
     {
-      "@id": "https://www.wikidata.org/wiki/Q163628",
+      "@id": "https://www.wikidata.org/wiki/Q193581",
       "@type": "https://schema.org/VideoGame",
-      "achievements": "0",
-      "average_playtime": "17612.0",
-      "categories": "Multi-player;Online Multi-Player;Local Multi-Player;Valve Anti-Cheat enabled",
-      "developers": "https://www.wikidata.org/wiki/Q193559",
-      "genres": "https://www.wikidata.org/wiki/Q185029",
-      "median_playtime": "317.0",
-      "name": "Counter-Strike",
+      "achievements": "33",
+      "average_playtime": "691.0",
+      "categories": "Single-player;Steam Achievements;Steam Trading Cards;Captions available;Partial Controller Support;Steam Cloud;Includes Source SDK",
+      "developers": "wd:Q193559",
+      "genres": [
+        "wd:Q185029",
+        "wd:Q27670585",
+        "wd:Q115101598",
+        "wd:Q129722891"
+      ],
+      "median_playtime": "402.0",
+      "name": "Half-Life 2",
       "owners": "10000000-20000000",
-      "platforms": "https://www.wikidata.org/wiki/Q132020",
+      "platforms": [
+        "wd:Q1406",
+        "wd:Q132020",
+        "wd:Q48263",
+        "wd:Q10683",
+        "wd:Q14116",
+        "wd:Q388",
+        "wd:Q94"
+      ],
       "price": "7.19",
-      "publishers": "https://www.wikidata.org/wiki/Q562078",
-      "rating_count": "127873",
-      "rating_value": "97.38881546534452",
-      "release_date": "2000-11-01",
+      "publishers": "wd:Q193559",
+      "rating_count": "70321",
+      "rating_value": "96.56006029493324",
+      "release_date": "2004-11-16",
       "required_age": "0",
-      "steamspy_tags": "Action;FPS;Multiplayer"
+      "steamspy_tags": "FPS;Action;Sci-fi"
     },
     {
       "@id": "https://www.wikidata.org/wiki/Q279744",
@@ -211,19 +185,116 @@
       "achievements": "0",
       "average_playtime": "1300.0",
       "categories": "Single-player;Multi-player;Online Multi-Player;Steam Cloud;Valve Anti-Cheat enabled",
-      "developers": "https://www.wikidata.org/wiki/Q1046593",
-      "genres": "https://www.wikidata.org/wiki/Q27670585",
+      "developers": [
+        "wd:Q193559",
+        "wd:Q1046593"
+      ],
+      "genres": [
+        "wd:Q185029",
+        "wd:Q27670585"
+      ],
       "median_playtime": "83.0",
       "name": "Half-Life",
       "owners": "5000000-10000000",
-      "platforms": "https://www.wikidata.org/wiki/Q14116",
+      "platforms": [
+        "wd:Q388",
+        "wd:Q10680",
+        "wd:Q1406",
+        "wd:Q14116"
+      ],
       "price": "7.19",
-      "publishers": "https://www.wikidata.org/wiki/Q193559",
+      "publishers": [
+        "wd:Q494614",
+        "wd:Q193559"
+      ],
       "rating_count": "28855",
       "rating_value": "96.18783573037601",
       "release_date": "1998-11-08",
       "required_age": "0",
       "steamspy_tags": "FPS;Classic;Action"
+    },
+    {
+      "@id": "https://www.wikidata.org/wiki/Q831796",
+      "@type": "https://schema.org/VideoGame",
+      "achievements": "0",
+      "average_playtime": "361.0",
+      "categories": "Single-player",
+      "developers": "wd:Q1046593",
+      "genres": [
+        "wd:Q185029",
+        "wd:Q27670585"
+      ],
+      "median_playtime": "205.0",
+      "name": "Half-Life: Blue Shift",
+      "owners": "5000000-10000000",
+      "platforms": [
+        "wd:Q388",
+        "wd:Q14116",
+        "wd:Q1406"
+      ],
+      "price": "3.99",
+      "publishers": "wd:Q494614",
+      "rating_count": "4242",
+      "rating_value": "90.0990099009901",
+      "release_date": "2001-06-01",
+      "required_age": "0",
+      "steamspy_tags": "FPS;Action;Sci-fi"
+    },
+    {
+      "@id": "https://www.wikidata.org/wiki/Q163628",
+      "@type": "https://schema.org/VideoGame",
+      "achievements": "0",
+      "average_playtime": "17612.0",
+      "categories": "Multi-player;Online Multi-Player;Local Multi-Player;Valve Anti-Cheat enabled",
+      "developers": "wd:Q193559",
+      "genres": [
+        "wd:Q1260861",
+        "wd:Q185029"
+      ],
+      "median_playtime": "317.0",
+      "name": "Counter-Strike",
+      "owners": "10000000-20000000",
+      "platforms": [
+        "wd:Q1406",
+        "wd:Q14116",
+        "wd:Q388",
+        "wd:Q132020"
+      ],
+      "price": "7.19",
+      "publishers": [
+        "wd:Q193559",
+        "wd:Q494614",
+        "wd:Q562078"
+      ],
+      "rating_count": "127873",
+      "rating_value": "97.38881546534452",
+      "release_date": "2000-11-01",
+      "required_age": "0",
+      "steamspy_tags": "Action;FPS;Multiplayer"
+    },
+    {
+      "@id": "https://www.wikidata.org/wiki/Q1799621",
+      "@type": "https://schema.org/VideoGame",
+      "achievements": "0",
+      "average_playtime": "277.0",
+      "categories": "Multi-player;Online Multi-Player;Local Multi-Player;Valve Anti-Cheat enabled",
+      "developers": "wd:Q193559",
+      "genres": "wd:Q185029",
+      "median_playtime": "62.0",
+      "name": "Team Fortress Classic",
+      "owners": "5000000-10000000",
+      "platforms": [
+        "wd:Q1406",
+        "wd:Q388",
+        "wd:Q14116"
+      ],
+      "price": "3.99",
+      "publishers": "wd:Q494614",
+      "rating_count": "3951",
+      "rating_value": "83.97873955960516",
+      "release_date": "1999-04-01",
+      "required_age": "0",
+      "steamspy_tags": "Action;FPS;Multiplayer"
     }
   ]
 }
