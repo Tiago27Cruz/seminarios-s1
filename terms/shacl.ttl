@@ -3,7 +3,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix ex: <http://example.org/shapes/> .
 @prefix wdprop: <https://www.wikidata.org/wiki/Property:> . 
 
