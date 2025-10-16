@@ -33,7 +33,7 @@
       "@type": "xsd:string"
     },
     "platforms": {
-      "@id": "https://schema.org/operatingSystem",
+      "@id": "https://www.wikidata.org/wiki/Property:P400",
       "@type": "@id"
     },
     "price": {
