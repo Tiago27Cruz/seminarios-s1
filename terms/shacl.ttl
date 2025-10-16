@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix ex: <http://example.org/shapes/> .
+@prefix wdprop: <https://www.wikidata.org/wiki/Property:> . 
 
 
 ex:VideoGameShape
@@ -24,7 +25,7 @@ ex:VideoGameShape
     sh:maxCount 1 ;
     sh:message "Each game must have one release date (release_date) in the format YYYY-MM-DD."
   ] ;
-  sh:property [ # TODO: Limitamos a 0-100? >0? Sem restrição?
+  sh:property [
     sh:path schema:ratingValue ;
     sh:datatype xsd:float ;
     sh:minCount 1 ;
@@ -124,7 +125,7 @@ ex:VideoGameShape
     sh:message "genres must point to IRIs when present."
   ] ;
   sh:property [
-    sh:path schema:operatingSystem ; 
+    sh:path wdprop:P400 ;
     sh:nodeKind sh:IRI ;
     sh:minCount 1 ;
     sh:message "platforms must point to IRIs when present."
