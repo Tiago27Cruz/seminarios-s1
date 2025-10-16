@@ -102,32 +102,28 @@ ex:VideoGameShape
     sh:message "categories must be a string or a list of strings."
   ] ;
 
-  # properties that point to URIs (wikidata etc.)
+  # properties that point to IRIs (wikidata etc.)
   sh:property [
     sh:path schema:creator ;
-    sh:nodeKind sh:URI ;
+    sh:nodeKind sh:IRI ;
     sh:minCount 0 ;
-    sh:pattern: "wd:Q[0-9]+" ;
-    sh:message "developers must point to URIs (e.g. wd:Q12345)."
+    sh:message "developers must point to IRIs (e.g. wd:Q12345)."
   ] ;
   sh:property [
     sh:path schema:publisher ;
-    sh:nodeKind sh:URI ;
+    sh:nodeKind sh:IRI ;
     sh:minCount 0 ;
-    sh:pattern: "wd:Q[0-9]+" ;
-    sh:message "publishers must point to URIs when present."
+    sh:message "publishers must point to IRIs when present."
   ] ;
   sh:property [
     sh:path schema:genre ;
-    sh:nodeKind sh:URI ;
+    sh:nodeKind sh:IRI ;
     sh:minCount 0 ;
-    sh:pattern: "wd:Q[0-9]+" ;
-    sh:message "genres must point to URIs when present."
+    sh:message "genres must point to IRIs when present."
   ] ;
   sh:property [
     sh:path schema:operatingSystem ; 
-    sh:nodeKind sh:URI ;
+    sh:nodeKind sh:IRI ;
     sh:minCount 0 ;
-    sh:pattern: "wd:Q[0-9]+" ;
-    sh:message "platforms must point to URIs when present."
+    sh:message "platforms must point to IRIs when present."
   ] .
