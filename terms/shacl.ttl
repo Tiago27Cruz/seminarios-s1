@@ -6,62 +6,63 @@
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix ex: <http://example.org/shapes/> .
 
-# Shape for resources of type VideoGame (schema:VideoGame)
+
 ex:VideoGameShape
   a sh:NodeShape ;
   sh:targetClass <https://schema.org/VideoGame> ;
   sh:property [
-    sh:path dcterms:title ;            # name
+    sh:path dcterms:title ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:message "Each game must have a title (name)."
   ] ;
   sh:property [
-    sh:path schema:datePublished ;     # release_date
+    sh:path schema:datePublished ;
     sh:datatype xsd:date ;
     sh:minCount 1 ;
-    sh:message "Each game must have a release date (release_date) in the format YYYY-MM-DD."
+    sh:message "Each game must have one release date (release_date) in the format YYYY-MM-DD."
   ] ;
   sh:property [
-    sh:path schema:ratingValue ;       # rating_value
+    sh:path schema:ratingValue ;
     sh:datatype xsd:float ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "rating_value must be a number (float)."
+    sh:message "rating_value must be a number (float) and not a list."
   ] ;
   sh:property [
-    sh:path schema:ratingCount ;       # rating_count
+    sh:path schema:ratingCount ;
     sh:datatype xsd:integer ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "rating_count must be an integer."
+    sh:message "rating_count must be an integer and not a list."
   ] ;
   sh:property [
     sh:path smvg:achievements ;
     sh:datatype xsd:integer ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "achievements must be an integer when present."
+    sh:message "achievements must be an integer when present and not a list."
   ] ;
   sh:property [
     sh:path smvg:avg_playtime ;
     sh:datatype xsd:float ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "average_playtime must be a float when present."
+    sh:message "average_playtime must be a float when present and not a list."
   ] ;
   sh:property [
     sh:path smvg:median_playtime ;
     sh:datatype xsd:float ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "median_playtime must be a float when present."
+    sh:message "median_playtime must be a float when present and not a list."
   ] ;
   sh:property [
     sh:path smvg:owners ;
     sh:datatype xsd:string ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
+    sh:pattern "^[0-9]+-[0-9]+$" ;
     sh:message "owners must be a string (e.g. '10000000-20000000')."
   ] ;
   sh:property [
@@ -78,9 +79,10 @@ ex:VideoGameShape
     sh:maxCount 1 ;
     sh:message "required_age must be an integer when present."
   ] ;
+
   # properties that are lists of literals
   sh:property [
-    sh:path schema:keywords ;          # steamspy_tags
+    sh:path schema:keywords ;
     sh:datatype xsd:string ;
     sh:minCount 0 ;
     sh:message "steamspy_tags/schema:keywords must be a string or a list of strings."
@@ -91,27 +93,28 @@ ex:VideoGameShape
     sh:minCount 0 ;
     sh:message "categories must be a string or a list of strings."
   ] ;
+
   # properties that point to IRIs (wikidata etc.)
   sh:property [
-    sh:path schema:creator ;           # developers (mapped to @id)
+    sh:path schema:creator ;
     sh:nodeKind sh:IRI ;
     sh:minCount 0 ;
     sh:message "developers must point to IRIs (e.g. wd:Q12345)."
   ] ;
   sh:property [
-    sh:path schema:publisher ;         # publishers
+    sh:path schema:publisher ;
     sh:nodeKind sh:IRI ;
     sh:minCount 0 ;
     sh:message "publishers must point to IRIs when present."
   ] ;
   sh:property [
-    sh:path schema:genre ;             # genres (mapped to @id)
+    sh:path schema:genre ;
     sh:nodeKind sh:IRI ;
     sh:minCount 0 ;
     sh:message "genres must point to IRIs when present."
   ] ;
   sh:property [
-    sh:path schema:operatingSystem ;   # platforms
+    sh:path schema:operatingSystem ; 
     sh:nodeKind sh:IRI ;
     sh:minCount 0 ;
     sh:message "platforms must point to IRIs when present."
