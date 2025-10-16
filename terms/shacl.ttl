@@ -4,6 +4,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ex: <http://example.org/shapes/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix wdprop: <https://www.wikidata.org/wiki/Property:> . 
 
 
