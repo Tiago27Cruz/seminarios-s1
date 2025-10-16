@@ -43,6 +43,10 @@ def addWikidataPrefix(row: pd.Series) -> pd.Series:
         row['wd_genres'] = ['https://www.wikidata.org/wiki/' + genre for genre in row['wd_genres']]
     return row
 
+def removeDuplicateWikidataGameIDs(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.drop_duplicates(subset=['wd_game_id'])
+    return df
+
 def joinWikidataColumns(df: pd.DataFrame) -> pd.DataFrame:
     #df = df.apply(addWikidataPrefix, axis=1)
     df = df.drop(columns=['appid', 'developer', 'publisher', 'platforms', 'genres'])

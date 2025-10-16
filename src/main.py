@@ -36,6 +36,7 @@ def main():
         df = hm.aggregateRatings(df)
         df = wd.getGameWDEntry(df)
         df = hm.dropWithoutWikidata(df)
+        df = hm.removeDuplicateWikidataGameIDs(df)
         df = hm.joinWikidataColumns(df)
         saveCsvData(df, args.output)
     else:
