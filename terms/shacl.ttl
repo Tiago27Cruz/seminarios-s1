@@ -22,11 +22,13 @@ ex:VideoGameShape
     sh:minCount 1 ;
     sh:message "Each game must have one release date (release_date) in the format YYYY-MM-DD."
   ] ;
-  sh:property [
+  sh:property [ # TODO: Limitamos a 0-100? >0? Sem restrição?
     sh:path schema:ratingValue ;
     sh:datatype xsd:float ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
+    sh:minInclusive 0.0 ;
+    sh:maxInclusive 100.0 ;
     sh:message "rating_value must be a number (float) and not a list."
   ] ;
   sh:property [
@@ -34,28 +36,32 @@ ex:VideoGameShape
     sh:datatype xsd:integer ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "rating_count must be an integer and not a list."
+    sh:minInclusive 0 ;
+    sh:message "rating_count must be an integer >= 0 and not a list."
   ] ;
   sh:property [
     sh:path smvg:achievements ;
     sh:datatype xsd:integer ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "achievements must be an integer when present and not a list."
+    sh:minInclusive 0 ;
+    sh:message "achievements must be an integer >= 0 when present and not a list."
   ] ;
   sh:property [
     sh:path smvg:avg_playtime ;
     sh:datatype xsd:float ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "average_playtime must be a float when present and not a list."
+    sh:minInclusive 0.0 ;
+    sh:message "average_playtime must be a float >= 0 when present and not a list."
   ] ;
   sh:property [
     sh:path smvg:median_playtime ;
     sh:datatype xsd:float ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "median_playtime must be a float when present and not a list."
+    sh:minInclusive 0.0 ;
+    sh:message "median_playtime must be a float >= 0 when present and not a list."
   ] ;
   sh:property [
     sh:path smvg:owners ;
@@ -70,14 +76,16 @@ ex:VideoGameShape
     sh:datatype xsd:float ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "price must be numeric when present."
+    sh:minInclusive 0.0 ;
+    sh:message "price must be a float >= 0 when present."
   ] ;
   sh:property [
     sh:path schema:requiredMinAge ;
     sh:datatype xsd:integer ;
     sh:minCount 0 ;
     sh:maxCount 1 ;
-    sh:message "required_age must be an integer when present."
+    sh:minInclusive 0 ;
+    sh:message "required_age must be an integer >= 0 when present."
   ] ;
 
   # properties that are lists of literals
