@@ -14,12 +14,14 @@ ex:VideoGameShape
     sh:path dcterms:title ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:message "Each game must have a title (name)."
   ] ;
   sh:property [
     sh:path schema:datePublished ;
     sh:datatype xsd:date ;
     sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:message "Each game must have one release date (release_date) in the format YYYY-MM-DD."
   ] ;
   sh:property [ # TODO: Limitamos a 0-100? >0? Sem restrição?
